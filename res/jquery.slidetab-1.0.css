@@ -12,25 +12,21 @@
 }
 /** Main CSS **/
 .slideTabs {
-    height: 40px;
     position: relative;
 }
 .slideTabs-menu {
     background: url("slidertabs_center.png") repeat-x scroll 0 0 transparent;
-    height: 40px;
     overflow: hidden;
     position: relative;
 }
 .slideTabs-menu li {
     cursor: pointer;
     float: left;
-    height: 40px;
     position: relative;
     z-index: 15;
 }
 .slideTabs-menu li .list {
     display: table-cell;
-    height: 40px;
     text-align: center;
     vertical-align: middle;
 }
@@ -46,51 +42,53 @@
     font-size: 12px;
     text-shadow: 0 1px 0 white;
 }
-.slideTabs-menu li.hovered a {
+li.slideTabs-hovered a {
     color: #008DB7;
 }
-.slideTabs-menu li.selected, .slideTabs-menu li.selected a {
+li.slideTabs-selected, 
+li.slideTabs-selected a {
     color: #EA4317;
     cursor: default;
 }
 .slideTabs-menu .slideTabs-slideBox {
     background: url("slidertabs_corners.png") no-repeat scroll 0 -40px transparent;
-    height: 40px;
     position: absolute;
     z-index: 10;
 }
 
 .slideTabs-menu .slideTabs-slideBox-inner {
     background: url("slidertabs_corners.png") no-repeat scroll right -40px transparent;
-    height: 40px;
+    height: 100%;
     margin-left: 10px;
     padding-right: 10px;
 }
 .slideTabs-menu .slideTabs-slideBox-inner .ver {
     background: url("slidertabs_center.png") repeat-x scroll 0 -40px transparent;
-    height: 40px;
+    height: 100%;
+}
+.slideTabs-edge {
+	background: url("slidertabs_corners.png") no-repeat scroll 0 0 transparent;
+	float: left;
+    height: 100%;
+    width: 10px;
 }
 .slideTabs-edge-begin {
-    background: url("slidertabs_corners.png") no-repeat scroll 0 0 transparent;
-    float: left;
-    height: 40px;
-    width: 10px;
+   background-position: 0 0;    
 }
-.slideTabs-edge-end {
-    background: url("slidertabs_corners.png") no-repeat scroll -10px 0 transparent;
-    float: left;
-    height: 40px;
-    width: 10px;
+.slideTabs-edge-end {	
+    background-position: -10px 0;    
 }
 .slideTabs-contents {
-    overflow: hidden;
+	overflow: hidden;
+	position: relative;
 	z-index: 2;
 }
-.slideTabs-contents ul {
+.slideTabs-contents ul {	
 	overflow: hidden;  
     position: relative;
     z-index: 3;
 }
 .slideTabs-content {
     float: left;
+	overflow: hidden;
 }
