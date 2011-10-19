@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Slide Tab | Another jQuery Plugin</title>
+		<link rel="stylesheet" type="text/css" href="res/jquery.slidetab-1.0.css" />
+	</head>
+	<body>
+		<div id="product-menu">
+			<div class="edge-begin"></div>
+			<!--Notice :
+			a tag's href => book mark 
+			a tag's rel => relative div.content  
+			<i></i> make ie 6/7 inline block work
+			-->
+			<ul id="menu-list">
+				<li class="l1"><div class="list">
+					<i></i><a hidefocus="true" href="#Industry_Leading_Architecture" rel="Industry_Leading_Architecture">Industry
+						Leading Architecture</a>
+				</div></li>
+				<li class="l2"><div class="list">
+					<i></i><a hidefocus="true" href="#End-to-End_Productivity" rel="End-to-End_Productivity">End-to-End <br />Productivity</a>
+				</div></li>
+				<li class="l3"><div class="list">
+					<i></i><a hidefocus="true" href="#Pattern_Driven_Development" rel="Pattern_Driven_Development">Pattern Driven
+						Development</a>
+				</div></li>
+				<li class="l4"><div class="list">
+					<i></i><a hidefocus="true" href="#Rich_Modular_UI" rel="Rich_Modular_UI">Rich Modular UI</a>
+				</div></li>
+			</ul>
+			<div class="edge-end"></div>
+		</div>
+		<div id="product-content">
+		<div id="contents">
+			<ul id="content-list">
+				<li>
+					<div class="content" >
+						test1
+					</div>
+				</li>
+				<li>
+					<div class="content" >
+						test2
+					</div>
+				</li>
+				<li>
+					<div class="content" >
+						test2
+					</div>
+				</li>
+				<li>
+					<div class="content" >
+						test2
+					</div>
+				</li>
+			</ul>
+		</div>
+		</div>
+		<script type="text/javascript" src="lib/jquery-1.6.4.min.js"></script>
+		<script type="text/javascript" src="src/jquery.slidetab-1.0.js"></script>
+		<script>
+		$(function() {
+			$("#menu-list").jProductMenuBox({
+				start : 0,
+				selected : "selectedItem",
+				slidebox : "slideItem",
+				content : "#contents",
+				btnGo : '#menu-list li[class^="l"]',
+				speed : 432,
+				click : function(e, target) {
+					if (target) {
+						var h = $("a", target).attr("href");
+						location.href = h;
+					}
+				}
+			});
+		});
+		</script>
+	</body>
+</html>

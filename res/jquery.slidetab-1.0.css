@@ -1,0 +1,108 @@
+/* Reset */
+#product-menu  ul,
+#product-menu  li {
+	list-style: none outside none;
+	margin: 0 0;
+	padding: 0 0;
+}
+#product-menu {
+    height: 40px;
+    position: relative;
+    width: 960px;
+}
+#product-menu ul, #product-menu li {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+#product-menu #menu-list {
+    background: url("slidertabs_center.png") repeat-x scroll 0 0 transparent;
+    float: left;
+    height: 40px;
+    overflow: hidden;
+    position: relative;
+    width: 940px;
+}
+#product-menu .edge-begin {
+    background: url("slidertabs_corners.png") no-repeat scroll 0 0 transparent;
+    float: left;
+    height: 40px;
+    width: 10px;
+}
+#product-menu .edge-end {
+    background: url("slidertabs_corners.png") no-repeat scroll -10px 0 transparent;
+    float: left;
+    height: 40px;
+    width: 10px;
+}
+#product-menu #menu-list li {
+    cursor: pointer;
+    float: left;
+    height: 40px;
+    position: relative;
+    width: 134px;
+    z-index: 15;
+}
+#product-menu #menu-list li .list {
+    display: table-cell;
+    height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    width: 134px;
+}
+#product-menu #menu-list li a {
+    color: #555555;
+    font-size: 12px;
+    text-shadow: 0 1px 0 white;
+}
+#product-menu #menu-list li a, #product-menu #menu-list li a:active, #product-menu #menu-list li a:focus {
+    outline: 0 none;
+}
+#product-menu #menu-list li a:hover {
+    text-decoration: none;
+}
+#product-menu #menu-list li.slideItem {
+    background: url("slidertabs_corners.png") no-repeat scroll 0 -40px transparent;
+    height: 40px;
+    position: absolute;
+    z-index: 10;
+}
+#product-menu #menu-list li.hovered a {
+    color: #008DB7;
+}
+#product-menu #menu-list li.selectedItem, #product-menu #menu-list li.selectedItem a {
+    color: #EA4317;
+    cursor: default;
+}
+#product-menu #menu-list .slideItem-inner {
+    background: url("slidertabs_corners.png") no-repeat scroll right -40px transparent;
+    height: 40px;
+    margin-left: 10px;
+    padding-right: 10px;
+}
+#product-menu #menu-list .slideItem-inner .ver {
+    background: url("slidertabs_center.png") repeat-x scroll 0 -40px transparent;
+    height: 40px;
+}
+
+#product-content {
+    overflow: hidden;
+    width: 960px;
+}
+#product-content #contents {
+    overflow: hidden;
+    position: relative;
+    visibility: hidden;
+    z-index: 2;
+}
+#product-content ul#content-list {
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    z-index: 3;
+}
+#product-content .content {
+    float: left;
+}
