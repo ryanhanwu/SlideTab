@@ -1,8 +1,6 @@
 #SlideTab jQuery Plugin 
 ##version 1.0
 
-Copyright (c) 2011 Flyworld. Licensed under the MIT license.
-
 ---
 #Usage
 Add __SlideTab__ css to your html file
@@ -44,3 +42,15 @@ Then enable slideTab function
 
 As you can see, __SlideTab__ don't count on any id or CSS class except the initial id. That means it will generate them automatically.
     
+---
+#Author
+
+[About.me](http://about.me/flyworld)
+
+flyworld (at) gmail.com
+
+---
+#Other
+
+
+Copyright (c) 2011 Flyworld. Licensed under the MIT license.
