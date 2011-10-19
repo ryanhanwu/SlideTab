@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<title>Slide Tab | Another jQuery Plugin</title>
-		<link rel="stylesheet" type="text/css" href="res/jquery.slidetab-1.0.css" />
+		<link rel="stylesheet" type="text/css" href="jquery.slidetab-1.0.min.css" />
 		<style>
 			#mySlideMenu {
 				width: 800px;
@@ -52,20 +52,10 @@
 			Footer Test
 		</div>
 		<script type="text/javascript" src="lib/jquery-1.6.4.min.js"></script>
-		<script type="text/javascript" src="src/jquery.slidetab-1.0.js"></script>
+		<script type="text/javascript" src="jquery.slidetab-1.0.min.js"></script>
 		<script>
 		$(function() {
-		$("#mySlideMenu").slideTab();
-			/*$("#mySlideMenu").slideTab({
-				start : 0,
-				speed : 432,
-				click : function(e, target) {
-					if (target) {
-						var h = $("a", target).attr("href");
-						location.href = h;
-					}
-				}
-			});*/
+			$("#mySlideMenu").slideTab();
 		});
 		</script>
 	</body>
