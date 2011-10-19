@@ -7,7 +7,7 @@
 .slideTabs  a, .slideTabs  a:hover , .slideTabs a:active, .slideTabs a:focus{
 	outline: 0 none;
 	text-decoration: none;
-	noFocusLine:expression(this.onFocus=this.blur()); /* For IE, onFocus ? F ???*/
+	noFocusLine:expression(this.onFocus=this.blur()); /* For IE, onFocus */
 	-moz-outline-style: none; /* For Firefox */
 }
 /** Main CSS **/
