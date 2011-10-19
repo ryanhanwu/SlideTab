@@ -18,19 +18,19 @@ Add HTML like following DOM structure
 	<div id="mySlideMenu">
 		<ul>
 			<li>
-				<a>Default</a>
+				<a>Tab1</a>
 			</li>
 			<li>
-				<a>Specify Start Item</a>
+				<a>Tab <br /> 2</a>
 			</li>
 		</ul>
 		<div>
 			<ul>
 				<li>
-					test
+					Content 1
 				</li>
 				<li>
-					test2
+					Content 2
 				</li>
 			</ul>
 		</div>
@@ -45,12 +45,11 @@ As you can see, __SlideTab__ don't count on any id or CSS class except the initi
 ---
 #Author
 
-[About.me](http://about.me/flyworld)
+[Ryan Wu](http://about.me/flyworld) aka. flyworld
 
-flyworld (at) gmail.com
+designed by **Eric  Brecht**
 
 ---
 #Other
 
-
-Copyright (c) 2011 Flyworld. Licensed under the MIT license.
+Copyright (c) 2011 Flyworld. Licensed under the [MIT](http://www.opensource.org/licenses/mit-license.php) license.
