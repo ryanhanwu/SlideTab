@@ -1,39 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset='utf-8'>
-
-  <title>flyworld/SlideTab @ GitHub</title>
-
-  <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      background-color: #24197c;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #ffffff;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-    h1 { font-size: 3.8em; color: #dbe683; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #dbe683; }
-    h3 { text-align: center; color: #dbe683; }
-    a { color: #dbe683; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-  </style>
+	<meta http-equiv='content-type' content='text/html; charset=UTF-8'>
+	<title>SlideTab | jQuery Plugin @ GitHub</title>
+	<link href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
+	<link href="index.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-  <a href="http://github.com/flyworld/SlideTab"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+	<a href="http://github.com/flyworld/SlideTab"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
 
-  <div id="container">
+	<div id="container">
 
     <div class="download">
       <a href="http://github.com/flyworld/SlideTab/zipball/master">
@@ -46,32 +23,128 @@
       <span class="small">by <a href="http://github.com/flyworld">flyworld</a></span></h1>
 
     <div class="description">
-      A jQuery Plug-in
+		A jQuery plugin providing sliding tabs and contents.
     </div>
-
+	<h2>Usage</h2>
+	<p>
+		Add SlideTab css to your html file
+		<br />
+		<pre class="brush: html">
+			<link rel="stylesheet" type="text/css" href="res/jquery.slidetab-1.0.css" />
+		</pre>
+	</p>
+	
+	<p>
+		Load jQuery, and the SlideTab plugin:
+		<pre class="brush: html">
+			&lt;script type="text/javascript" src="jquery.min.js"></script>		
+			&lt;script type="text/javascript" src="jquery.slidetab-1.0.min.js"></script>		
+		</pre>
+	</p>
+	
+	<p>
+		Add HTML like following DOM structure
+		<br />
+		<pre class="brush: html">
+			<div id="mySlideMenu">
+				<ul>
+					<li>
+						<a>Tab1</a>
+					</li>
+					<li>
+						<a>Tab <br /> 2</a>
+					</li>
+				</ul>
+				<div>
+					<ul>
+						<li>
+							Content 1
+						</li>
+						<li>
+							Content 2
+						</li>
+					</ul>
+				</div>
+			</div>
+		</pre>
+	</p>
+	
+	<p>
+		Activate SlideTab on outer DIV
+		<br />
+		<pre class="brush: js">
+			$("#mySlideMenu").slideTab();
+		</pre>
+	</p>
+	<h3>Preview</h3>
+	<p>
+		<div id="mySlide1" width="300px">
+			<ul>
+				<li>
+					<a>Tab1</a>
+				</li>
+				<li>
+					<a>Tab <br /> 2</a>
+				</li>
+			</ul>
+			<div>
+				<ul>
+					<li>
+						Content 1 <br/>
+						Coooooooool
+					</li>
+					<li>
+						Content 2 <br/>
+						Coooooooool again
+					</li>
+				</ul>
+			</div>
+		</div>
+	</p>
     <h2>Authors</h2>
-<p>Flyworld (flyworld@gmail.com)<br/>      </p>
-<h2>Contact</h2>
-<p>Flyworld (flyworld@gmail.com)<br/>      </p>
+	<p>
+		<a href="http://about.me">About Flyworld</a>
+		<br />
+		flyworld@gmail.com
+	</p>
 
 
-    <h2>Download</h2>
+    <h2>Download</h2>  
     <p>
-      You can download this project in either
-      <a href="http://github.com/flyworld/SlideTab/zipball/master">zip</a> or
-      <a href="http://github.com/flyworld/SlideTab/tarball/master">tar</a> formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/flyworld/SlideTab</pre>
+		You can clone the project with <a href="http://git-scm.com">Git</a> by running:
+		<pre class="hl">$ git clone git://github.com/flyworld/SlideTab</pre>
     </p>
 
+ 
     <div class="footer">
       get the source code on GitHub : <a href="http://github.com/flyworld/SlideTab">flyworld/SlideTab</a>
     </div>
 
-  </div>
-
-  
+	</div>
+    <script src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js" type="text/javascript"></script>
+	<script src="http://alexgorbatchev.com/pub/sh/current/scripts/shAutoloader.js" type="text/javascript"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		SyntaxHighlighter.autoloader(
+			'js jscript javascript  js/shBrushJScript.js',
+			'css            		js/shBrushCss.js',
+			'xml xhtml xslt html    js/shBrushXml.js'
+		);
+		SyntaxHighlighter.defaults['gutter'] = false;
+		SyntaxHighlighter.defaults['smart-tabs'] = false;
+		SyntaxHighlighter.defaults['toolbar'] = false;
+		SyntaxHighlighter.all();
+	</script>
+   <script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-3502234-11']);
+		_gaq.push(['_trackPageview']);
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsById('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+	<div id="ga" />
 </body>
 </html>
