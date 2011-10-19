@@ -17,7 +17,6 @@
 }
 .slideTabs-menu {
     background: url("slidertabs_center.png") repeat-x scroll 0 0 transparent;
-    float: left;
     height: 40px;
     overflow: hidden;
     position: relative;
@@ -83,24 +82,15 @@
     height: 40px;
     width: 10px;
 }
-#product-content {
+.slideTabs-contents {
     overflow: hidden;
-    width: 960px;
+	z-index: 2;
 }
-#product-content #contents {
-    overflow: hidden;
-    position: relative;
-    visibility: hidden;
-    z-index: 2;
-}
-#product-content ul#content-list {
-    list-style-type: none;
-    margin: 0;
-    overflow: hidden;
-    padding: 0;
+.slideTabs-contents ul {
+	overflow: hidden;  
     position: relative;
     z-index: 3;
 }
-#product-content .content {
+.slideTabs-content {
     float: left;
 }

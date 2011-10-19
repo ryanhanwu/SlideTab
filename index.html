@@ -13,31 +13,20 @@
 		<div id="mySlideMenu">
 			<ul>
 				<li>
-				
-						<a href="#">Industry Leading Architecture</a>
-					
+					<a>Industry Leading Architecture</a>
 				</li>
 				<li>
-					
-						<a href="#">End-to-End <br />Productivity</a>
-				
+					<a>End-to-End <br />Productivity</a>
 				</li>
 				<li>
-					
-						<a href="#">Pattern Driven Development</a>
-				
+					<a>Pattern Driven Development</a>
 				</li>
 				<li>
-					
-						<a href="#">Rich Modular UI</a>
-						
-				
+					<a>Rich Modular UI</a>
 				</li>
 			</ul>
-		</div>
-		<div id="product-content">
-			<div id="contents">
-				<ul id="content-list">
+			<div>
+				<ul>
 					<li>
 						<div class="content" >
 							test1
@@ -50,12 +39,12 @@
 					</li>
 					<li>
 						<div class="content" >
-							test2
+							test3
 						</div>
 					</li>
 					<li>
 						<div class="content" >
-							test2
+							test3
 						</div>
 					</li>
 				</ul>
@@ -67,8 +56,6 @@
 		$(function() {
 			$("#mySlideMenu").slideTab({
 				start : 0,
-				content : "#contents",
-				btnGo : '#menu-list li[class^="l"]',
 				speed : 432,
 				click : function(e, target) {
 					if (target) {
