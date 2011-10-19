@@ -4,6 +4,7 @@
 	<meta http-equiv='content-type' content='text/html; charset=UTF-8'>
 	<title>SlideTab | jQuery Plugin @ GitHub</title>
 	<link href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
+	<link href="jquery.slidetab-1.0/jquery.slidetab-1.0.min.css" rel="stylesheet" type="text/css" />
 	<link href="index.css" rel="stylesheet" type="text/css" />
 </head>
 
@@ -54,14 +55,32 @@
 					<li>
 						<a>Tab <br /> 2</a>
 					</li>
+					<li>
+						<a>Tab <br /> 3</a>
+					</li>
+					<li>
+						<a>Tab <br /> 4</a>
+					</li>
 				</ul>
 				<div>
 					<ul>
 						<li>
-							Content 1
+							Content 1 <br/>
+							Coooooooool <br />
+							Very Cool !!!!
 						</li>
 						<li>
-							Content 2
+							Content 2 <br/>
+							Coooooooool again
+						</li>
+						<li>
+							Content 3 <br/>
+							Coooooooool <br />
+							Very Cool !!!!
+						</li>
+						<li>
+							Content 4 <br/>
+							Coooooooool again
 						</li>
 					</ul>
 				</div>
@@ -78,7 +97,7 @@
 	</p>
 	<h3>Preview</h3>
 	<p>
-		<div id="mySlide1" width="300px">
+		<div id="mySlide1" style="width:300px;">
 			<ul>
 				<li>
 					<a>Tab1</a>
@@ -86,15 +105,31 @@
 				<li>
 					<a>Tab <br /> 2</a>
 				</li>
+				<li>
+					<a>Tab <br /> 3</a>
+				</li>
+				<li>
+					<a>Tab <br /> 4</a>
+				</li>
 			</ul>
 			<div>
 				<ul>
 					<li>
 						Content 1 <br/>
-						Coooooooool
+						Coooooooool <br />
+						Very Cool !!!!
 					</li>
 					<li>
 						Content 2 <br/>
+						Coooooooool again
+					</li>
+					<li>
+						Content 3 <br/>
+						Coooooooool <br />
+						Very Cool !!!!
+					</li>
+					<li>
+						Content 4 <br/>
 						Coooooooool again
 					</li>
 				</ul>
@@ -105,7 +140,7 @@
 	<p>
 		<a href="http://about.me">About Flyworld</a>
 		<br />
-		flyworld@gmail.com
+		Designed by Eric
 	</p>
 
 
@@ -124,6 +159,7 @@
     <script src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js" type="text/javascript"></script>
 	<script src="http://alexgorbatchev.com/pub/sh/current/scripts/shAutoloader.js" type="text/javascript"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" type="text/javascript"></script>
+	<script src="jquery.slidetab-1.0/jquery.slidetab-1.0.min.js" type="text/javascript"></script>
 	<script type="text/javascript">
 		SyntaxHighlighter.autoloader(
 			'js jscript javascript  js/shBrushJScript.js',
@@ -134,6 +170,9 @@
 		SyntaxHighlighter.defaults['smart-tabs'] = false;
 		SyntaxHighlighter.defaults['toolbar'] = false;
 		SyntaxHighlighter.all();
+		$(function() {
+			$("#mySlide1").slideTab();
+		});
 	</script>
    <script type="text/javascript">
 		var _gaq = _gaq || [];

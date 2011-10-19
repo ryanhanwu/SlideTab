@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Slide Tab | Another jQuery Plugin</title>
+		<link rel="stylesheet" type="text/css" href="jquery.slidetab-1.0.min.css" />
+		<style>
+			#mySlideMenu {
+				width: 800px;
+			}
+			.myContent {
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div id="mySlideMenu">
+			<ul>
+				<li>
+					<a>Default</a>
+				</li>
+				<li>
+					<a>Specify Start Item</a>
+				</li>
+				<li>
+					<a>Specify Speed</a>
+				</li>
+				<li>
+					<a>Rich Modular UI</a>
+				</li>
+			</ul>
+			<div>
+				<ul class="myContent">
+					<li>
+							<ul>
+								<li>Click Slide</li>
+								<li>Key Control - Left &amp; Right</li>
+							</ul>
+					</li>
+					<li>
+							test2
+					</li>
+					<li>
+							test3
+					
+					</li>
+					<li>
+							test4
+					
+					</li>
+				</ul>
+			</div>
+			Footer Test
+		</div>
+		<script type="text/javascript" src="lib/jquery-1.6.4.min.js"></script>
+		<script type="text/javascript" src="jquery.slidetab-1.0.min.js"></script>
+		<script>
+		$(function() {
+			$("#mySlideMenu").slideTab();
+		});
+		</script>
+	</body>
+</html>
