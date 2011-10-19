@@ -1,90 +1,88 @@
-/* Reset */
-#product-menu  ul,
-#product-menu  li {
+/** Global / Reset **/
+.slideTabs  ul,.slideTabs  li {
 	list-style: none outside none;
 	margin: 0 0;
 	padding: 0 0;
 }
-#product-menu {
+.slideTabs  a, .slideTabs  a:hover , .slideTabs a:active, .slideTabs a:focus{
+	outline: 0 none;
+	text-decoration: none;
+	noFocusLine:expression(this.onFocus=this.blur()); /* For IE, onFocus ? F ???*/
+	-moz-outline-style: none; /* For Firefox */
+}
+/** Main CSS **/
+.slideTabs {
     height: 40px;
     position: relative;
-    width: 960px;
 }
-#product-menu ul, #product-menu li {
-    list-style: none outside none;
-    margin: 0;
-    padding: 0;
-}
-#product-menu #menu-list {
+.slideTabs-menu {
     background: url("slidertabs_center.png") repeat-x scroll 0 0 transparent;
     float: left;
     height: 40px;
     overflow: hidden;
     position: relative;
-    width: 940px;
 }
-#product-menu .edge-begin {
-    background: url("slidertabs_corners.png") no-repeat scroll 0 0 transparent;
-    float: left;
-    height: 40px;
-    width: 10px;
-}
-#product-menu .edge-end {
-    background: url("slidertabs_corners.png") no-repeat scroll -10px 0 transparent;
-    float: left;
-    height: 40px;
-    width: 10px;
-}
-#product-menu #menu-list li {
+.slideTabs-menu li {
     cursor: pointer;
     float: left;
     height: 40px;
     position: relative;
-    width: 134px;
     z-index: 15;
 }
-#product-menu #menu-list li .list {
+.slideTabs-menu li .list {
     display: table-cell;
     height: 40px;
     text-align: center;
     vertical-align: middle;
-    width: 134px;
 }
-#product-menu #menu-list li a {
+.slideTabs-menu li .list * {
+	#vertical-align: middle; 
+	#display: inline-block;
+}
+.slideTabs-menu li .list i {
+	height: 100%;
+}
+.slideTabs-menu li a {
     color: #555555;
     font-size: 12px;
     text-shadow: 0 1px 0 white;
 }
-#product-menu #menu-list li a, #product-menu #menu-list li a:active, #product-menu #menu-list li a:focus {
-    outline: 0 none;
+.slideTabs-menu li.hovered a {
+    color: #008DB7;
 }
-#product-menu #menu-list li a:hover {
-    text-decoration: none;
+.slideTabs-menu li.selected, .slideTabs-menu li.selected a {
+    color: #EA4317;
+    cursor: default;
 }
-#product-menu #menu-list li.slideItem {
+.slideTabs-menu .slideTabs-slideBox {
     background: url("slidertabs_corners.png") no-repeat scroll 0 -40px transparent;
     height: 40px;
     position: absolute;
     z-index: 10;
 }
-#product-menu #menu-list li.hovered a {
-    color: #008DB7;
-}
-#product-menu #menu-list li.selectedItem, #product-menu #menu-list li.selectedItem a {
-    color: #EA4317;
-    cursor: default;
-}
-#product-menu #menu-list .slideItem-inner {
+
+.slideTabs-menu .slideTabs-slideBox-inner {
     background: url("slidertabs_corners.png") no-repeat scroll right -40px transparent;
     height: 40px;
     margin-left: 10px;
     padding-right: 10px;
 }
-#product-menu #menu-list .slideItem-inner .ver {
+.slideTabs-menu .slideTabs-slideBox-inner .ver {
     background: url("slidertabs_center.png") repeat-x scroll 0 -40px transparent;
     height: 40px;
 }
-
+.slideTabs-edge-begin {
+    background: url("slidertabs_corners.png") no-repeat scroll 0 0 transparent;
+    float: left;
+    height: 40px;
+    width: 10px;
+}
+.slideTabs-edge-end {
+    background: url("slidertabs_corners.png") no-repeat scroll -10px 0 transparent;
+    float: left;
+    height: 40px;
+    width: 10px;
+}
 #product-content {
     overflow: hidden;
     width: 960px;
