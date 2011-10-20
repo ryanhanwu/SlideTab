@@ -2,6 +2,11 @@
 
 version 1.0
 
+A jQuery plugin which provides sliding tabs with Following features.
+
+* Arrow key control - LEFT, and RIGHT
+* Fiexiable Width (implemented without TABLE)
+
 #Usage
 Add __SlideTab__ css to your html file
 
@@ -40,8 +45,45 @@ Then enable slideTab function
 		
 	$("#mySlideMenu").slideTab();
 
-As you can see, __SlideTab__ don't count on any id or CSS class except the initial id. That means it will generate them automatically.
-    
+#Config
+As you can see, __SlideTab__ don't count on any id or CSS class except the initial id. That means it will generate them automatically. 
+
+##Item Begin
+__start : number __
+
+Start from specific item 
+
+	$("#mySlideMenu").slideTab({
+		start : 1
+	});
+
+##Width 
+__SlideTab__ supports flexiable width, you can assign width directly to the DIV around it, the menu items will get average width by default.
+
+	<style>
+		#mySlideMenu {
+			width: 400px;
+		}
+	</style>
+	<style>
+		#mySlideMenu {
+			width: 600px;
+		}
+	</style>
+##Effect And Speed
+__SlideTab__ supports custom effect(need jQuery easing Plug-in)  and speed configuration
+
+	$("#mySlideMenu").slideTab({
+		effect : 'linear',
+		speed : 678
+	});
+
+##Separated Content 
+
+##Click Event
+
+##Work With Hash Tag
+
 #Author
 
 [Ryan Wu](http://about.me/flyworld) aka. flyworld
