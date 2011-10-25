@@ -16,7 +16,7 @@
 		<div id="mySlideMenu">
 			<ul>
 				<li>
-					<a>Default</a>
+					<a href="#test">Default</a>
 				</li>
 				<li>
 					<a>Specify Start Item</a>
@@ -52,10 +52,15 @@
 			Footer Test
 		</div>
 		<script type="text/javascript" src="lib/jquery-1.6.4.min.js"></script>
-		<script type="text/javascript" src="jquery.slidetab-1.0.min.js"></script>
+		<script type="text/javascript" src="src/jquery.slidetab.js"></script>
 		<script>
 		$(function() {
-			$("#mySlideMenu").slideTab();
+			$("#mySlideMenu").slideTab( {
+				start : 1,
+				click : function (event, target) {
+					location.href = $("a", target).attr("href");
+				}
+			});
 		});
 		</script>
 	</body>

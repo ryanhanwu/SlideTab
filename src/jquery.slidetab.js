@@ -17,7 +17,7 @@
 			content : null,
 			start : 0,
 			scroll : 1,
-			click : function() {
+			click : function(event, target) {
 			} 
 		}, o || {});
 
@@ -31,7 +31,7 @@
 				$c_div = $(o.content == null ? $("> div:first", this) : $(o.content)).addClass(o.class_contents), 
 				$c_ul = $("ul:first",$c_div), 
 				$c_li = $("li",$c_ul).addClass(o.class_content),				
-				$sb = $('<li class="' + o.class_slideBox + '"><div class="' + o.class_slideBox_inner + '"><div class="ver"></div></div></li>').appendTo($m_ul), 				
+				$slideBox = $('<li class="' + o.class_slideBox + '"><div class="' + o.class_slideBox_inner + '"><div class="ver"></div></div></li>').appendTo($m_ul), 				
 				
 				//Globals
 				seld = $m_li.eq(o.start).addClass(o.class_selected)[0], 
@@ -41,58 +41,61 @@
 				currentIndex = o.start;	
 						
 
-			$m_ul.prepend('<div class="' + o.class_edge + ' ' + o.class_edge + '-begin"></div>');
-			$m_ul.append('<div class="' + o.class_edge + ' ' + o.class_edge + '-end"></div>');			
+			$('<div />').attr({"class" : o.class_edge + ' ' + o.class_edge + '-begin'}).prependTo($m_ul);
+			$('<div />').attr({"class" : o.class_edge + ' ' + o.class_edge + '-end'}).appendTo($m_ul);	
 			$m_ul.css({ height : o.defaultHeight });
-			$m_li.each(function() {
-				var temp = $(this).children().detach();
-					m_div = $('<div class="list"><i></i></div>').append(temp).appendTo($(this));
-					m_div.width((totalWidth - $('.' + o.class_edge).width() * 2 )/ $m_li.length );
-					m_div.children("a").attr("href","#");
-					$(this).css({ height : o.defaultHeight });
+			$m_li.each(function(index, target) {
+				var temp = $(target).children().detach();
+					m_div = $('<div class="list"><i></i></div>').append(temp).appendTo($(target));
+					m_div.width((totalWidth - $('.' + o.class_edge + ":first").width() * 2 )/ $m_li.length ),
+					m_a = $("a", m_div);
+					if (typeof m_a.attr("href") === 'undefined' || typeof m_a.attr("href") === false)
+						m_a.attr("href","#");
+					$(target).css({ height : o.defaultHeight });
 					m_div.css({ height : o.defaultHeight });
+				$(target).click(function() {
+					menuSlide(target);
+					return contentSlide(index);
+				});
 			});
-			$sb.css({width : seld.offsetWidth, height : o.defaultHeight, left : seld.offsetLeft});	
+			$slideBox.css({width : seld.offsetWidth, height : o.defaultHeight, left : seld.offsetLeft});	
 			$c_div.css({width : totalWidth});
 			$c_li.css({width : totalWidth});		
-			$c_ul.css({left : 0, height : $c_li[currentIndex].offsetHeight});
-			$c_ul.css("width", itemLength * totalWidth).css("left", -(currentIndex * totalWidth));
+			$c_ul.css({height : $c_li[currentIndex].offsetHeight,
+					   width : itemLength * totalWidth,
+					   left : -(currentIndex * totalWidth)});
 			
 			setSelected(seld);
 			//Menu items' key LEFT and RIGHT 
 			$(document).keydown(function(e) {
 				switch (e.keyCode) {
-					case 37:
-						$($(seld).prev()[0]).click();
+					case 36: //HOME
+						$m_li.first().click();
 						break;
-					case 39:
-						$($(seld).next('li[class!="' + o.slidebox + '"]')[0]).click();
+					case 35: //END
+						$m_li.last().click();
+						break;
+					case 37: //LEFT
+						$(seld).prev($m_li).click();
+						break;
+					case 39: //RIGHT
+						$(seld).next($m_li).click();
 						break;
 				}
 			});
 			
 			//Menu items' mouse over 
 			$m_li.hover(function() {
-				$(this).addClass(o.class_hovered);
-			}, function() {
-				$(this).removeClass(o.class_hovered);
+				$(this).toggleClass(o.class_hovered);
 			});
 			
-			//Click function hack - handle selected
+			//Custom click function 
 			$m_li.click(function(e) {
 				if (this != seld) {
 					setSelected(this);
 					return o.click.apply(this, [ e, this ]);
 				}
-				return o.click.apply(this, [ e, null ]);
-			});
-			
-			//Menu items' click handle
-			$.each($m_li, function(i, val) {
-				$(val).click(function() {
-					menuSlide(this);
-					return contentSlide(i);
-				});
+				return o.click.apply(this, [ e, null ]);//Selected item have to moveTo target
 			});
 			
 			function setSelected(el) {
@@ -102,7 +105,7 @@
 			}
 			
 			function menuSlide(el) {
-				$sb.stop(false, false).animate({
+				$slideBox.stop(false, false).animate({
 					width : el.offsetWidth,
 					left : el.offsetLeft
 				}, o.speed, o.effect);
